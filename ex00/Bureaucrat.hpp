@@ -3,13 +3,14 @@
 
 #include <string>
 #include <iostream>
+#include <exception>
 
 class Bureaucrat{
 	public:
 		Bureaucrat();
 		Bureaucrat(std::string name, int grade);
 		~Bureaucrat();
-		class GradeTooHighException{
+		class GradeTooHighException: public std::exception{
 			public:
 				GradeTooHighException(std::string err_msg);
 				~GradeTooHighException();
@@ -17,7 +18,7 @@ class Bureaucrat{
 			private:
 				std::string _err_msg;
 		};
-		class GradeTooLowException{
+		class GradeTooLowException: public std::exception{
 			public:
 				GradeTooLowException(std::string err_msg);
 				~GradeTooLowException();
@@ -29,7 +30,7 @@ class Bureaucrat{
 		std::string	const& getName() const;
 
 	private:
-		std::string _name;
+		std::string const _name;
 		int	_grade;
 
 	protected:
