@@ -16,9 +16,15 @@ Form::Form(const Form& copi):_name(copi._name), _to_exec(copi._to_exec), _to_sig
 
 }
 
+Form::~Form()
+{
+
+}
+
 Form& Form::operator =(const Form& copi)
 {
 	//nonsense
+	(void) copi;
 	return(*this);
 }
 const std::string Form::getName() const
@@ -31,12 +37,12 @@ bool	Form::getsigned() const
 	return (this->_signed);
 }
 
-const int	Form::get_to_sign() const
+int	Form::get_to_sign() const
 {
 	return (this->_to_sign);
 }
 
-const int	Form::get_to_exec() const
+int	Form::get_to_exec() const
 {
 	return (this->_to_exec);
 }

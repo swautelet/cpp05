@@ -72,9 +72,10 @@ void	Bureaucrat::signForm(Form& tosign) const
 	}
 	catch(const std::exception& e)
 	{
-		if (e.what() == "Error grade is too low!")
+		std::string lol = e.what();
+		if (lol.compare("Error grade is too low!") == 0)
 			std::cout << this->getName() << " couldn't signed " << tosign.getName() << " because grade is too low" << std::endl;
-		else if (e.what() == "Error grade is too high!")
+		else if (lol.compare("Error grade is too high!") == 0)
 			std::cout << this->getName() << " couldn't signed " << tosign.getName() << " because is already signed" << std::endl;
 		else
 			std::cout << this->getName() << " couldn't signed " << tosign.getName() << " because of an unknowm reason" << std::endl;

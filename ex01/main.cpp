@@ -2,57 +2,26 @@
 
 int main()
 {
-	try
-	{
-		Bureaucrat test("Paul", 200);
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat test("Paul", 0);
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
 	Bureaucrat paul("Paul", 1);
 	Bureaucrat roger("Roger", 150);
+	std::cout << paul;
+	Form form("test", 20, 20);
 	try
 	{
-		paul.promote();
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		roger.demote();
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << roger;
-	try
-	{
-		roger.promote();
+		Form fail("fail", 0, 12);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << roger;
+	
 	try
 	{
-		paul.demote();
+		paul.signForm(form);
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << '\n';
 	}
-	std::cout << paul;
+	
 }

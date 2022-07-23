@@ -5,6 +5,8 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form{
 	public:
 		Form(std::string name, int gradesign, int gradexec);
@@ -21,16 +23,16 @@ class Form{
 		};
 		const std::string getName() const;
 		bool	getsigned() const;
-		const int	get_to_sign() const;
-		const int	get_to_exec() const;
+		int	get_to_sign() const;
+		int	get_to_exec() const;
 		void	beSigned(const Bureaucrat& signat);
 
 	private:
 		Form();
 		const std::string _name;
-		bool _signed;
-		const int	_to_sign;
 		const int	_to_exec;
+		const int	_to_sign;
+		bool _signed;
 
 	protected:
 
