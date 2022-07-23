@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
 class Bureaucrat{
 	public:
@@ -22,6 +23,7 @@ class Bureaucrat{
 		std::string	const& getName() const;
 		void	promote();
 		void	demote();
+		void	signForm(Form& tosign) const;
 
 	private:
 		std::string const _name;

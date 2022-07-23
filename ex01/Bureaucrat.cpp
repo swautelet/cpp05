@@ -63,6 +63,25 @@ std::ostream& operator <<(std::ostream& out, const Bureaucrat& bur)
 	return(out);
 }
 
+void	Bureaucrat::signForm(Form& tosign) const
+{
+	try
+	{
+		tosign.beSigned(*this);
+		std::cout << this->getName() << " signed " << tosign.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		if (e.what() == "Error grade is too low!")
+			std::cout << this->getName() << " couldn't signed " << tosign.getName() << " because grade is too low" << std::endl;
+		else if (e.what() == "Error grade is too high!")
+			std::cout << this->getName() << " couldn't signed " << tosign.getName() << " because is already signed" << std::endl;
+		else
+			std::cout << this->getName() << " couldn't signed " << tosign.getName() << " because of an unknowm reason" << std::endl;
+	}
+	
+}
+
 const char* Bureaucrat::GradeTooHighException::what() const throw()
 {
 	return("Error grade is too high!");
