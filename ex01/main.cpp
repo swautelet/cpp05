@@ -14,6 +14,14 @@ int main()
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	try
+	{
+		roger.signForm(form);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	
 	try
 	{
@@ -21,7 +29,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 	}
 	
 }
