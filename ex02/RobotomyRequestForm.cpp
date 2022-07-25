@@ -2,15 +2,15 @@
 
 RobotomyRequestForm::RobotomyRequestForm():Form("robotomyrequestform", 72, 45)
 {
-
+	std::srand((unsigned)time(0));
 }
 RobotomyRequestForm::RobotomyRequestForm(const std::string target):Form("robotomyrequestform", 72, 45), _target(target)
 {
-
+	std::srand((unsigned)time(0));
 }
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copi):Form(copi.getName(), copi.get_to_sign(), copi.get_to_exec()), _target(copi.gettarget())
 {
-
+	std::srand((unsigned)time(0));
 }
 
 RobotomyRequestForm& RobotomyRequestForm:: operator = (const RobotomyRequestForm& copi)
@@ -36,7 +36,8 @@ void	RobotomyRequestForm::execute(const Bureaucrat& signat) const
 	// successfully 50% of the time. Otherwise, informs that the robotomy failed.
 	Form::execute(signat);
 	std::cout << "BZZZZZZZZZZ BRRRRRRRRRRR BZZZZZZ " << std::endl;
-	if (rand() % 2 == 0)
+	// std::srand((unsigned)time(0));
+	if (std::rand() % 2 == 0)
 	{
 		std::cout << this->_target << " has been robotomized successfully by " << signat.getName() << std::endl;
 	}

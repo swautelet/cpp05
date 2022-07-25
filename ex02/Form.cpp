@@ -61,10 +61,10 @@ void	Form::beSigned(const Bureaucrat& signat)
 	}
 	else if (this->_signed == true)
 	{
-		throw(GradeTooLowException());
+		throw(GradeTooHighException());
 	}
 	else{
-		throw(GradeTooHighException());
+		throw(GradeTooLowException());
 	}
 }
 

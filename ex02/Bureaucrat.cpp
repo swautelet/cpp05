@@ -88,10 +88,17 @@ void	Bureaucrat::executeForm(const Form& form)
 	try
 	{
 		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::string lol = e.what();
+		if (lol.compare("Error grade is too low!") == 0)
+			std::cout << this->getName() << " couldn't execute " << form.getName() << " because grade is too low" << std::endl;
+		else if (lol.compare("Error grade is too high!") == 0)
+			std::cout << this->getName() << " couldn't execute " << form.getName() << " because is already signed" << std::endl;
+		else
+			std::cout << this->getName() << " couldn't execute " << form.getName() << " because of an unknowm reason" << std::endl;
 	}
 	
 }
