@@ -20,4 +20,6 @@ int main()
 	{
 		roger.executeForm(*test[i]);
 	}
+	Form* nul = lol.makeForm("false", "roger");
+	std::cout << nul << std::endl;
 }

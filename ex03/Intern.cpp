@@ -46,6 +46,11 @@ Form*	Intern::makeForm(const std::string& name, const std::string& target)
 {
 	int i = 0;
 	Form* ret = NULL;
+	if (this->_to_del[999])
+	{
+		std::cout << "Intern is burned it can't create anymore Form";
+		return (NULL);
+	}
 	while(i < 3 && name.compare(this->_forms[i]))
 	{
 		i++;
