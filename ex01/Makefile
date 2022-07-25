@@ -6,10 +6,10 @@ OBJ=$(SRC:%.cpp=%.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	g++ $(CPPFLAGS) $(OBJ) -o $(NAME)
+	c++ $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 .o:.cpp
-	g++ -c $(CPPFLAGS) $? 
+	c++ -c $(CPPFLAGS) $? 
 
 clean :
 	rm -f $(OBJ)
