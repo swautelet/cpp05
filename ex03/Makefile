@@ -1,4 +1,4 @@
-SRC = Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp  RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp Intern.hpp main.cpp
+SRC = Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp  RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp main.cpp
 NAME = bureaucrat
 CPPFLAGS = -Werror -Wextra -Wall -std=c++98
 OBJ=$(SRC:%.cpp=%.o)
