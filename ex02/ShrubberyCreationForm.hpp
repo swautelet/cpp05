@@ -6,15 +6,15 @@
 
 class ShrubberyCreationForm:public Form{
 	public:
-		ShrubberyCreationForm();
 		ShrubberyCreationForm(const std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& copi);
 		ShrubberyCreationForm&	operator =(const ShrubberyCreationForm& copi);
 		~ShrubberyCreationForm();
-		virtual void	execute(const Bureaucrat& signat);
+		virtual void	execute(const Bureaucrat& signat) const;
 		const std::string gettarget() const;
 
 	private:
+		ShrubberyCreationForm();
 		const std::string _target;
 
 	protected:

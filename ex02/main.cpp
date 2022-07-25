@@ -1,27 +1,117 @@
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
 	Bureaucrat paul("Paul", 1);
 	Bureaucrat roger("Roger", 150);
-	std::cout << paul;
-	Form form("test", 20, 20);
+
+	ShrubberyCreationForm shrub("home");
+	RobotomyRequestForm robot("Roger");
+	PresidentialPardonForm zaph("Zaphrod");
+
 	try
 	{
-		Form fail("fail", 0, 12);
+		roger.signForm(shrub);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
-	
 	try
 	{
-		paul.signForm(form);
+		roger.signForm(robot);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;
 	}
-	
+	try
+	{
+		roger.signForm(zaph);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	try
+	{
+		paul.signForm(shrub);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		paul.signForm(robot);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		paul.signForm(zaph);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	try
+	{
+		roger.executeForm(shrub);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what()  << " I can't execute this form!" << std::endl;
+	}
+	try
+	{
+		roger.executeForm(robot);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what()  << " I can't execute this form!" << std::endl;
+	}
+	try
+	{
+		roger.executeForm(zaph);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what()  << " I can't execute this form!" << std::endl;
+	}
+
+	try
+	{
+		paul.executeForm(shrub);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		try
+		{
+			paul.executeForm(robot);
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+	try
+	{
+		paul.executeForm(zaph);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }

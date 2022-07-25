@@ -30,14 +30,15 @@ const std::string	RobotomyRequestForm::gettarget() const
 	return (this->_target);
 }
 
-void	RobotomyRequestForm::execute(const Bureaucrat& signat)
+void	RobotomyRequestForm::execute(const Bureaucrat& signat) const
 {
 	// Makes some drilling noises. Then, informs that <target> has been robotomized
 	// successfully 50% of the time. Otherwise, informs that the robotomy failed.
+	Form::execute(signat);
 	std::cout << "BZZZZZZZZZZ BRRRRRRRRRRR BZZZZZZ " << std::endl;
 	if (rand() % 2 == 0)
 	{
-		std::cout << this->_target << " has been robotomized successfully!" << std::endl;
+		std::cout << this->_target << " has been robotomized successfully by " << signat.getName() << std::endl;
 	}
 	else
 	{

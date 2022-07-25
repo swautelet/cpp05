@@ -19,7 +19,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator = (const PresidentialPa
 {
 	//nonsense attributes are const
 	(void) copi;
-	this->_target = copi.gettarget();
+	// this->_target = copi.gettarget();
 	return (*this);
 }
 
@@ -33,8 +33,9 @@ const std::string	PresidentialPardonForm::gettarget() const
 	return (this->_target);
 }
 
-void	PresidentialPardonForm::execute(const Bureaucrat& signat)
+void	PresidentialPardonForm::execute(const Bureaucrat& signat) const
 {
+	Form::execute(signat);
 	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 	// Informs that <target> has been pardoned by Zaphod Beeblebrox.
 }

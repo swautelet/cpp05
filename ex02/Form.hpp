@@ -12,7 +12,7 @@ class Form{
 		Form(std::string name, int gradesign, int gradexec);
 		Form(const Form& copi);
 		Form& operator =(const Form& copi);
-		~Form();
+		virtual ~Form() = 0;
 		class GradeTooHighException: public std::exception{
 			public:
 				const char* what() const throw();
@@ -26,7 +26,7 @@ class Form{
 		int	get_to_sign() const;
 		int	get_to_exec() const;
 		void	beSigned(const Bureaucrat& signat);
-		virtual void	execute(const Bureaucrat& signat) = 0;
+		virtual void	execute(const Bureaucrat& signat) const;
 
 	private:
 		Form();

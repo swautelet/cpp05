@@ -26,6 +26,7 @@ class Bureaucrat{
 		void	promote();
 		void	demote();
 		void	signForm(Form& tosign) const;
+		void	executeForm(const Form& form);
 
 	private:
 		std::string const _name;
