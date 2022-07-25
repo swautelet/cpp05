@@ -11,7 +11,7 @@ int main()
 	Bureaucrat roger("Roger", 1);
 	test[0] = lol.makeForm("shrubbery creation", "home");
 	test[1] = lol.makeForm("presidential pardon", "Zaphrod");
-	test[2] = lol.makeForm("robotomy request", "roger");
+	test[2] = lol.makeForm("robotomy request", "Bender");
 	for (int i = 0; i < 3; i++)
 	{
 		roger.signForm(*test[i]);
