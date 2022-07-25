@@ -26,6 +26,7 @@ class Form{
 		int	get_to_sign() const;
 		int	get_to_exec() const;
 		void	beSigned(const Bureaucrat& signat);
+		virtual void	execute(const Bureaucrat& signat) = 0;
 
 	private:
 		Form();
