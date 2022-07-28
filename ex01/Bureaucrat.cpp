@@ -18,9 +18,20 @@ Bureaucrat::Bureaucrat(std::string name, int grade):_name(name), _grade(grade)
 	std::cout << *this;
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat& copi):_name(copi.getName()), _grade(copi.getGrade())
+{
+
+}
+
 Bureaucrat::~Bureaucrat()
 {
 
+}
+
+Bureaucrat& Bureaucrat::operator =(const Bureaucrat& copi)
+{
+	this->_grade = copi.getGrade();
+	return(*this);
 }
 
 int	const& Bureaucrat::getGrade() const
