@@ -14,7 +14,7 @@ class Bureaucrat{
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(const Bureaucrat& copi);
 		~Bureaucrat();
-		Bureaucrat& operator =(const Bureaucrat&);
+		Bureaucrat& operator =(const Bureaucrat& copi);
 		class GradeTooHighException: public std::exception{
 			public:
 				const char* what() const throw();
